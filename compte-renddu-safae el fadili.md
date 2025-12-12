@@ -1,4 +1,10 @@
 # Rapport d'Analyse et de Modélisation Financière
+## École Nationale de Commerce et de Gestion (ENCG) \- 4ème Année
+<img src="encg settat.jpeg" style="height:264px;margin-right:264px"/>
+---
+<img src="safae el fadili_photo.jpg" style="height:264px;margin-right:264px"/>
+APOGEE:24010411
+
 ## Introduction
 ### Contexte
 Ce projet vise à analyser un ensemble de données financières provenant du New York Stock Exchange (NYSE), contenant des informations détaillées sur diverses entreprises sur plusieurs années. Le dataset comprend des indicateurs comptables, des ratios financiers, des données de performance, et des identifiants boursiers.
