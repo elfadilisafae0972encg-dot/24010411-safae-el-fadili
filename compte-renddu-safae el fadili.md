@@ -52,9 +52,9 @@ L'EDA a été menée pour visualiser la distribution des principales caractéris
 
 **Distributions des Caractéristiques Numériques (Histograms):** Des histogrammes ont été générés pour des colonnes clés telles que 'Accounts Payable', 'After Tax ROE', 'Earnings Per Share', et 'Total Revenue'. Ces visualisations ont révélé des distributions variées, dont certaines étaient asymétriques (skewed) ou présentaient des pics, indiquant une concentration de valeurs dans certaines plages. La mise à l'échelle (StandardScaler) a permis de normaliser ces distributions en termes de moyenne et d'écart-type, mais les formes intrinsèques (asymétrie, kurtosis) des distributions originales demeurent.  
 
-**Exemple d'Histograms:**
+### Exemple d'Histograms:
 
-### Exemple de code pour générer les histogrammes
+**Exemple de code pour générer les histogrammes**
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -71,9 +71,9 @@ plt.tight_layout()
 plt.show()
 Détection des Outliers (Boxplots): Des boxplots ont été utilisés pour les mêmes caractéristiques numériques afin d'identifier la présence de valeurs aberrantes. Comme souvent dans les données financières, de nombreux outliers ont été observés, en particulier pour des variables comme 'Accounts Payable' ou 'Total Revenue'. Ces outliers peuvent indiquer des événements exceptionnels pour certaines entreprises ou simplement des entreprises de tailles très différentes. La médiane, utilisée pour l'imputation des valeurs manquantes, est moins affectée par ces valeurs extrêmes.
 
-**Exemple de Boxplots:**
+### Exemple de Boxplots:
 
-### Exemple de code pour générer les boxplots
+**Exemple de code pour générer les boxplots**
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -89,9 +89,9 @@ plt.tight_layout()
 plt.show()
 Analyse de Corrélation (Heatmap): Une carte de chaleur (heatmap) de la matrice de corrélation a été générée pour visualiser les relations linéaires entre les caractéristiques numériques. Cette analyse a révélé des corrélations variées : certaines paires de variables étaient fortement corrélées (positivement ou négativement), ce qui est attendu dans les données financières où de nombreux indicateurs sont interdépendants. D'autres paires montraient des corrélations faibles ou nulles.
 
-**Exemple de Heatmap de Corrélation:**
+### Exemple de Heatmap de Corrélation:
 
-### Exemple de code pour générer la heatmap
+**Exemple de code pour générer la heatmap**
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
@@ -139,7 +139,7 @@ Mean Squared Error (MSE): 0.5748
 R-squared (R2) Score: 0.5083
 Random Forest Regressor
 
-**Justification** : Un modèle d'ensemble puissant, robuste aux outliers, capable de capturer des relations non linéaires et de gérer un grand nombre de caractéristiques. Il réduit le surapprentissage par l'agrégation de multiples arbres de décision.  
+**Justification** : Un modèle d'ensemble puissant, robuste aux outliers, capable de capturer des relations non linéaires et de gérer un grand nombre de caractéristiques. Il réduit le surapprentissage par l'agrégation de multiples arbres de décision.
 **Résultats** :
 Mean Absolute Error (MAE): 0.1500
 Mean Squared Error (MSE): 0.2823
@@ -175,21 +175,21 @@ Le tableau suivant récapitule les performances des trois modèles sur l'ensembl
 |--------|---------|--------|-----------|----------|
 |Linear| Regression|	0.35066|	0.574765|0.508322
 |Random| Forest| Regressor|	0.150015|	0.282331|	0.758482|
-|Gradient |Boosting |Regressor	|0.205294	|0.274554|	0.765135|
+|Gradient |Boosting |Regressor	|0.205294	|0.274554|	0.765135|  
 **Analyse :**
 
-La Régression Linéaire sert de ligne de base, expliquant environ 50.83% de la variance de l'EPS, ce qui est modéré et indique que les relations ne sont pas purement linéaires.
-Les modèles d'ensemble, Random Forest Regressor et Gradient Boosting Regressor, surclassent largement la régression linéaire, démontrant la capacité de ces algorithmes à capturer des relations plus complexes dans les données.
-Le Random Forest Regressor présente le MAE le plus bas (0.1500), suggérant qu'il réalise en moyenne les prédictions les plus proches des vraies valeurs.
-Le Gradient Boosting Regressor obtient le meilleur R-squared (0.7651) et le MSE le plus bas (0.2746). Un R2 de 0.7651 signifie que le modèle explique plus de 76% de la variance de l'EPS, ce qui est un résultat très satisfaisant pour la prédiction de données financières.
-Globalement, le Gradient Boosting Regressor est identifié comme le modèle le plus performant sur cet ensemble de données, offrant le meilleur équilibre entre la minimisation de l'erreur quadratique moyenne et la maximisation de la variance expliquée.
+La Régression Linéaire sert de ligne de base, expliquant environ 50.83% de la variance de l'EPS, ce qui est modéré et indique que les relations ne sont pas purement linéaires.  
+Les modèles d'ensemble, Random Forest Regressor et Gradient Boosting Regressor, surclassent largement la régression linéaire, démontrant la capacité de ces algorithmes à capturer des relations plus complexes dans les données.  
+Le Random Forest Regressor présente le MAE le plus bas (0.1500), suggérant qu'il réalise en moyenne les prédictions les plus proches des vraies valeurs.  
+Le Gradient Boosting Regressor obtient le meilleur R-squared (0.7651) et le MSE le plus bas (0.2746). Un R2 de 0.7651 signifie que le modèle explique plus de 76% de la variance de l'EPS, ce qui est un résultat très satisfaisant pour la prédiction de données financières.  
+Globalement, le Gradient Boosting Regressor est identifié comme le modèle le plus performant sur cet ensemble de données, offrant le meilleur équilibre entre la minimisation de l'erreur quadratique moyenne et la maximisation de la variance expliquée.  
 
-Analyse des Erreurs du Modèle (Exemple pour le Gradient Boosting Regressor)
-Bien que le R2 soit élevé, il est essentiel d'examiner les erreurs pour comprendre les limites du modèle.
+### Analyse des Erreurs du Modèle (Exemple pour le Gradient Boosting Regressor)
+Bien que le R2 soit élevé, il est essentiel d'examiner les erreurs pour comprendre les limites du modèle.  
 
-Visualisation des Résidus : Un graphique des résidus (différence entre les prédictions et les vraies valeurs) par rapport aux valeurs prédites ou réelles pourrait révéler des motifs (hétéroscédasticité, biais) indiquant des problèmes dans le modèle. Idéalement, les résidus devraient être répartis aléatoirement autour de zéro.
+Visualisation des Résidus : Un graphique des résidus (différence entre les prédictions et les vraies valeurs) par rapport aux valeurs prédites ou réelles pourrait révéler des motifs (hétéroscédasticité, biais) indiquant des problèmes dans le modèle. Idéalement, les résidus devraient être répartis aléatoirement autour de zéro.  
 
-### Exemple de code pour visualiser les résidus
+**Exemple de code pour visualiser les résidus**
 plt.figure(figsize=(10, 6))
 plt.scatter(y_pred_gbr, y_test - y_pred_gbr, alpha=0.5)
 plt.hlines(y=0, xmin=min(y_pred_gbr), xmax=max(y_pred_gbr), colors='red', linestyles='--')
@@ -199,36 +199,36 @@ plt.title('Analyse des Résidus du Gradient Boosting Regressor')
 plt.show()
 Distribution des Erreurs : L'histogramme des résidus permettrait de voir si les erreurs sont normalement distribuées autour de zéro. Une distribution non normale ou fortement asymétrique pourrait indiquer que le modèle ne capture pas toutes les relations ou qu'il est influencé par des outliers.
 
-### Exemple de code pour la distribution des erreurs
+**Exemple de code pour la distribution des erreurs**
 plt.figure(figsize=(8, 6))
 sns.histplot(y_test - y_pred_gbr, kde=True)
 plt.title('Distribution des Erreurs (Résidus) du Gradient Boosting Regressor')
 plt.xlabel('Erreurs de Prédiction')
 plt.ylabel('Fréquence')
-plt.show()
-Matrice de Confusion (non applicable directement pour la régression, mais pour la classification) : Si la tâche avait été une classification (par exemple, prédire si l'EPS sera positif ou négatif), une matrice de confusion serait utilisée. Pour une régression, des analyses d'erreurs plus spécifiques impliqueraient l'examen des observations où les erreurs sont les plus grandes pour comprendre pourquoi le modèle a eu des difficultés.
+plt.show()    
+Matrice de Confusion (non applicable directement pour la régression, mais pour la classification) : Si la tâche avait été une classification (par exemple, prédire si l'EPS sera positif ou négatif), une matrice de confusion serait utilisée. Pour une régression, des analyses d'erreurs plus spécifiques impliqueraient l'examen des observations où les erreurs sont les plus grandes pour comprendre pourquoi le modèle a eu des difficultés.  
 
 ## Conclusion
 ### Synthèse des Performances
-Cette analyse a démontré l'efficacité des modèles d'ensemble pour la prédiction de l'Earnings Per Share (EPS) sur les données financières du NYSE. Le Gradient Boosting Regressor s'est distingué comme le modèle le plus performant, atteignant un R-squared de 0.7651 et un MSE de 0.2746 sur l'ensemble de test, expliquant ainsi une part significative de la variance de l'EPS. Le Random Forest Regressor a également montré d'excellentes performances, particulièrement en termes de MAE.
+Cette analyse a démontré l'efficacité des modèles d'ensemble pour la prédiction de l'Earnings Per Share (EPS) sur les données financières du NYSE. Le Gradient Boosting Regressor s'est distingué comme le modèle le plus performant, atteignant un R-squared de 0.7651 et un MSE de 0.2746 sur l'ensemble de test, expliquant ainsi une part significative de la variance de l'EPS. Le Random Forest Regressor a également montré d'excellentes performances, particulièrement en termes de MAE.  
 
-La validation croisée a confirmé la robustesse générale du Gradient Boosting Regressor, avec une moyenne de R-squared de 0.7325 sur 5 plis, bien qu'une variabilité notable (écart-type de 0.1303) ait été observée, suggérant une sensibilité à la composition des sous-ensembles de données.
+La validation croisée a confirmé la robustesse générale du Gradient Boosting Regressor, avec une moyenne de R-squared de 0.7325 sur 5 plis, bien qu'une variabilité notable (écart-type de 0.1303) ait été observée, suggérant une sensibilité à la composition des sous-ensembles de données.  
 
 ### Limites du Modèle Actuel
-Malgré les bonnes performances, plusieurs limites peuvent être identifiées :
+Malgré les bonnes performances, plusieurs limites peuvent être identifiées :  
 
-Variabilité de la Performance : L'écart-type élevé des scores de validation croisée indique que le modèle, bien que globalement bon, peut être moins stable sur certains segments de données. Ceci pourrait être dû à des données d'entreprises très spécifiques ou à des périodes particulières.
-Interprétabilité : Les modèles d'ensemble sont des 'boîtes noires' comparés à la régression linéaire. Bien qu'ils soient performants, il est plus difficile d'expliquer directement et intuitivement la contribution de chaque caractéristique à une prédiction spécifique. Des techniques comme l'importance des caractéristiques ou les valeurs SHAP pourraient améliorer l'interprétabilité mais n'ont pas été explorées ici.
-Traitement des Outliers : Bien que la standardisation et l'imputation par la médiane aient été utilisées, la persistance d'outliers (observée lors de l'EDA) pourrait toujours influencer les prédictions et la stabilité du modèle.
-Hyperparamètres non optimisés : Les modèles initiaux ont été entraînés avec des hyperparamètres par défaut. Bien qu'une grille pour GridSearchCV ait été définie, l'étape d'optimisation n'a pas encore été finalisée pour le modèle GBR, ce qui pourrait potentiellement améliorer davantage les performances.
-Nature Temporelle des Données : Bien que des caractéristiques temporelles aient été extraites, l'approche n'a pas explicitement utilisé des modèles de séries temporelles qui pourraient mieux capturer les dépendances temporelles et les tendances sous-jacentes pour des prédictions futures.
+**Variabilité de la Performance :** L'écart-type élevé des scores de validation croisée indique que le modèle, bien que globalement bon, peut être moins stable sur certains segments de données. Ceci pourrait être dû à des données d'entreprises très spécifiques ou à des périodes particulières.  
+**Interprétabilité :** Les modèles d'ensemble sont des 'boîtes noires' comparés à la régression linéaire. Bien qu'ils soient performants, il est plus difficile d'expliquer directement et intuitivement la contribution de chaque caractéristique à une prédiction spécifique. Des techniques comme l'importance des caractéristiques ou les valeurs SHAP pourraient améliorer l'interprétabilité mais n'ont pas été explorées ici.  
+**Traitement des Outliers :** Bien que la standardisation et l'imputation par la médiane aient été utilisées, la persistance d'outliers (observée lors de l'EDA) pourrait toujours influencer les prédictions et la stabilité du modèle.  
+**Hyperparamètres non optimisés :** Les modèles initiaux ont été entraînés avec des hyperparamètres par défaut. Bien qu'une grille pour GridSearchCV ait été définie, l'étape d'optimisation n'a pas encore été finalisée pour le modèle GBR, ce qui pourrait potentiellement améliorer davantage les performances.  
+**Nature Temporelle des Données :** Bien que des caractéristiques temporelles aient été extraites, l'approche n'a pas explicitement utilisé des modèles de séries temporelles qui pourraient mieux capturer les dépendances temporelles et les tendances sous-jacentes pour des prédictions futures.  
 ### Pistes d'Amélioration
-Pour la suite du projet, les pistes d'amélioration suivantes sont envisagées :
+Pour la suite du projet, les pistes d'amélioration suivantes sont envisagées :   
 
-Optimisation des Hyperparamètres : L'étape la plus immédiate est d'exécuter GridSearchCV avec la grille de paramètres définie pour le Gradient Boosting Regressor. Cela devrait permettre de trouver la combinaison optimale d'hyperparamètres pour maximiser la performance et la généralisation du modèle.
-Gestion Avancée des Outliers : Explorer des techniques de traitement des valeurs aberrantes plus sophistiquées, telles que la Winsorisation, les transformations logarithmiques, ou des modèles robustes, pour améliorer la stabilité du modèle.
-Sélection et Ingénierie de Caractéristiques Avancées : Effectuer une analyse approfondie de l'importance des caractéristiques et envisager des techniques de réduction de dimensionnalité (ex: PCA) ou la création de ratios financiers supplémentaires qui pourraient être plus prédictifs.
-Exploration d'Autres Modèles : Tester d'autres algorithmes d'apprentissage automatique de pointe, comme XGBoost ou LightGBM, qui sont des variantes optimisées du gradient boosting et qui pourraient offrir de meilleures performances ou une meilleure efficacité computationnelle.
-Approches Temporelles : Si l'objectif est de prédire l'EPS pour de futures périodes, l'intégration de techniques de séries temporelles (ex: LSTM pour les données de panel, ou modèles ARIMAX) pourrait être pertinente, en considérant les données comme des séries temporelles par entreprise.
-Interprétabilité du Modèle : Utiliser des outils d'interprétabilité tels que SHAP (SHapley Additive exPlanations) pour comprendre les contributions des caractéristiques aux prédictions, ce qui est crucial dans un contexte financier.
-En abordant ces pistes d'amélioration, il serait possible de construire un modèle encore plus robuste, précis et interprétable pour la prédiction de l'Earnings Per Share.
+**Optimisation des Hyperparamètres** : L'étape la plus immédiate est d'exécuter GridSearchCV avec la grille de paramètres définie pour le Gradient Boosting Regressor. Cela devrait permettre de trouver la combinaison optimale d'hyperparamètres pour maximiser la performance et la généralisation du modèle.  
+**Gestion Avancée des Outliers :** Explorer des techniques de traitement des valeurs aberrantes plus sophistiquées, telles que la Winsorisation, les transformations logarithmiques, ou des modèles robustes, pour améliorer la stabilité du modèle.  
+**Sélection et Ingénierie de Caractéristiques Avancées :** Effectuer une analyse approfondie de l'importance des caractéristiques et envisager des techniques de réduction de dimensionnalité (ex: PCA) ou la création de ratios financiers supplémentaires qui pourraient être plus prédictifs.  
+**Exploration d'Autres Modèles :** Tester d'autres algorithmes d'apprentissage automatique de pointe, comme XGBoost ou LightGBM, qui sont des variantes optimisées du gradient boosting et qui pourraient offrir de meilleures performances ou une meilleure efficacité computationnelle.  
+**Approches Temporelles :** Si l'objectif est de prédire l'EPS pour de futures périodes, l'intégration de techniques de séries temporelles (ex: LSTM pour les données de panel, ou modèles ARIMAX) pourrait être pertinente, en considérant les données comme des séries temporelles par entreprise.  
+**Interprétabilité du Modèle :** Utiliser des outils d'interprétabilité tels que SHAP (SHapley Additive exPlanations) pour comprendre les contributions des caractéristiques aux prédictions, ce qui est crucial dans un contexte financier.  
+En abordant ces pistes d'amélioration, il serait possible de construire un modèle encore plus robuste, précis et interprétable pour la prédiction de l'Earnings Per Share.  
