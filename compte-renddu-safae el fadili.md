@@ -14,11 +14,11 @@ La prédiction des performances financières, et en particulier le bénéfice pa
 
 ### Objectifs Les objectifs principaux de cette analyse sont les suivants :
 
-Nettoyage et Préparation des Données : Effectuer un nettoyage et une préparation rigoureuse pour garantir la qualité, la cohérence et l'exploitabilité des données.
-Exploration des Données (EDA) : Mener une analyse exploratoire approfondie pour comprendre les distributions des variables, identifier les relations entre elles, et détecter d'éventuels motifs ou anomalies.
+**Nettoyage et Préparation des Données** : Effectuer un nettoyage et une préparation rigoureuse pour garantir la qualité, la cohérence et l'exploitabilité des données.
+**Exploration des Données (EDA)** : Mener une analyse exploratoire approfondie pour comprendre les distributions des variables, identifier les relations entre elles, et détecter d'éventuels motifs ou anomalies.
 Ingénierie des Caractéristiques (Feature Engineering) : Créer de nouvelles variables pertinentes à partir des données existantes pour enrichir le dataset et potentiellement améliorer la performance des modèles.
-Développement et Évaluation de Modèles Prédictifs : Entraîner et évaluer plusieurs modèles de régression pour prédire le 'Earnings Per Share' (EPS), en comparant leurs performances.
-Optimisation des Hyperparamètres et Validation Robuste : Utiliser des techniques de validation croisée et d'optimisation des hyperparamètres pour affiner le modèle le plus performant et obtenir une estimation plus fiable de sa capacité de généralisation.
+**Développement et Évaluation de Modèles Prédictifs** : Entraîner et évaluer plusieurs modèles de régression pour prédire le 'Earnings Per Share' (EPS), en comparant leurs performances.
+**Optimisation des Hyperparamètres et Validation Robuste** : Utiliser des techniques de validation croisée et d'optimisation des hyperparamètres pour affiner le modèle le plus performant et obtenir une estimation plus fiable de sa capacité de généralisation.
 ## Méthodologie
 Pour atteindre les objectifs fixés, une série d'étapes techniques rigoureuses a été mise en œuvre, chaque choix étant justifié par des considérations de qualité des données et de performance des modèles d'apprentissage automatique.
 
